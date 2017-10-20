@@ -50,23 +50,5 @@ route.get('/pengguna/:_id', function (req, res) {
     });
 });
 
-route.post('/pengguna/authenticate', function (req, res) {
-    let data = {
-        NamaPengguna: req.body.NamaPengguna,
-        KunciPengguna: req.body.KunciPengguna
-    };
-    Pengguna.findOne(data).lean().exec(function (err, pengguna) {
-        if (err) {
-            return res.json({ error: true });
-        }
-        if (!pengguna) {
-            return res.status(404).json({ 'message': 'pengguna not found!' });
-        }
-        let token = jwt.sign(pengguna, global.config.jwt_secret, {
-            expiresIn: 1440 // expires in 1 hour
-        });
-        res.json({ error: false, token: token });
-    })
-});
 
 module.exports = route;
