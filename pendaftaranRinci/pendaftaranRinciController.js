@@ -1,0 +1,16 @@
+PendaftaranRinci=require('./pendaftaranRinciModel.js');
+module.exports.getPendaftaranRinci=function(callback,limit){
+    PendaftaranRinci.find(callback).limit(limit);
+}
+module.exports.createPendaftaranRinci=function(pendaftaranrinci,callback){
+    PendaftaranRinci.create(pendaftaranrinci,callback);
+}
+module.exports.removePendaftaranRinci=function(_id,callback){
+    PendaftaranRinci.findByIdAndRemove(_id,callback);
+}
+module.exports.updatePendaftaranRinci=function(_id,pendaftaranrinci,callback){
+    PendaftaranRinci.findByIdAndUpdate(_id,pendaftaranrinci,callback);
+}
+module.exports.getPendaftaranRinciById=function(id,callback){
+    PendaftaranRinci.findById(id,callback);
+}
