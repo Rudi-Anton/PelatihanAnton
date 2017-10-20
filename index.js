@@ -24,7 +24,7 @@ let penggunaRoute=require('./pengguna/penggunaRoute.js');
 app.use('/api',penggunaRoute);
 let provinsiRoute=require('./provinsi/provinsiRoute.js');
 //app.use('/api',provinsiRoute);
-app.use('/api',verifyToken,provinsiRoute);
+app.use('/api',provinsiRoute);
 let aksespenggunaRoute=require('./aksespengguna/AksespenggunaRoute.js');
 app.use('/api',aksespenggunaRoute);
 let pendaftaranRinciRoute=require('./pendaftaranrinci/pendaftaranRinciRoute.js');
