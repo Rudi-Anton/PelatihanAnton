@@ -11,8 +11,8 @@ route.get('/aksespengguna', function (req, res) {
     });
 });
 route.post('/aksespengguna', function (req, res) {
-    let akses = req.body;
-    AksesPenggunaController.createAksesPengguna(akses,function (error, respon) {
+    let AksesPengguna = req.body;
+    AksesPenggunaController.createAksesPengguna(AksesPengguna,function (error, respon) {
         if (error) {
             throw error;
         }
@@ -28,8 +28,8 @@ route.delete('/aksespengguna/:_id', function (req, res) {
     });
 });
  route.put('/aksespengguna/:_id', function (req, res) {
-     let akses = req.body;
-     AksesPenggunaController.updateAksesPengguna(req.params._id,akses,function (error, respon) {
+     let AksesPengguna = req.body;
+     AksesPenggunaController.updateAksesPengguna(req.params._id,AksesPengguna,function (error, respon) {
          if (error) {
              throw error;
          }
@@ -38,7 +38,7 @@ route.delete('/aksespengguna/:_id', function (req, res) {
  });
  route.get('/aksespengguna/:_id', function (req, res) {
      let id = req.params._id;
-     AksesPenggunaController.getAksesPenggunaById(id, function (error, respon) {
+    AksesPenggunaController.getAksesPenggunaById(id, function (error, respon) {
         if (error) {
             throw error;
         }
