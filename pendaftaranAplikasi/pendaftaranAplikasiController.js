@@ -1,0 +1,16 @@
+PendaftaranAplikasi=require('./pendaftaranAplikasiModel.js');
+module.exports.getPendaftaranAplikasi=function(callback,limit){
+    PendaftaranAplikasi.find(callback).limit(limit);
+}
+module.exports.createPendaftaranAplikasi=function(pendaftaranaplikasi,callback){
+    PendaftaranAplikasi.create(pendaftaranaplikasi,callback);
+}
+module.exports.removePendaftaranAplikasi=function(_id,callback){
+    PendaftaranAplikasi.findByIdAndRemove(_id,callback);
+}
+module.exports.updatePendaftaranAplikasi=function(_id,pendaftaranaplikasi,callback){
+    PendaftaranAplikasi.findByIdAndUpdate(_id,pendaftaranaplikasi,callback);
+}
+module.exports.getPendaftaranAplikasiById=function(id,callback){
+    PendaftaranAplikasi.findById(id,callback);
+}
