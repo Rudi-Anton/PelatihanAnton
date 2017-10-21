@@ -1,0 +1,16 @@
+AksesPengguna=require('./aksesPenggunaModel.js');
+module.exports.getAksesPengguna=function(callback,limit){
+    AksesPengguna.find(callback).limit(limit);
+}
+module.exports.createAksesPengguna=function(aksespengguna,callback){
+    AksesPengguna.create(aksespengguna,callback);
+}
+module.exports.removeAksesPengguna=function(_id,callback){
+    AksesPengguna.findByIdAndRemove(_id,callback);
+}
+module.exports.updateAksesPengguna=function(_id,aksespengguna,callback){
+    AksesPengguna.findByIdAndUpdate(_id,aksespengguna,callback);
+}
+module.exports.getAksesPenggunaById=function(id,callback){
+    AksesPengguna.findById(id,callback);
+}
