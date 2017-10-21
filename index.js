@@ -25,10 +25,9 @@ app.use(function(req, res, next) {
 // let penggunaRoute=require('./pengguna/penggunaRoute.js');
 // app.use('/api',penggunaRoute);
 let provinsiRoute=require('./provinsi/provinsiRoute.js');
-//app.use('/api',provinsiRoute);
 app.use('/api',provinsiRoute);
- let aksesPenggunaRoute=require('./aksespengguna/aksesPenggunaRoute.js');
- app.use('/api',aksesPenggunaRoute);
+let aksesPenggunaRoute=require('./aksespengguna/aksesPenggunaRoute.js');
+app.use('/api',aksesPenggunaRoute);
 // let pendaftaranRinciRoute=require('./pendaftaranrinci/pendaftaranRinciRoute.js');
 // app.use('/api',pendaftaranRinciRoute);
 // let pendaftaranAplikasiRoute=require('./pendaftaranaplikasi/pendaftaranAplikasiRoute.js');
