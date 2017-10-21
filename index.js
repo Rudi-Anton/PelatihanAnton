@@ -40,7 +40,7 @@ app.use('/api',pendaftaranAplikasiRoute);
 // let kyuKungfuRoute=require('./kyuKungfu/kyuKungfuRoute.js');
 // app.use('/api',kyuKungfuRoute);
 require("./koneksidb/koneksidb")
-//mong.connect('mongodb://dbpelatihan:Sayangorangtua20@ds113785.mlab.com:13785/dbpelatihan');
+//mong.connect('mongodb://localhost:27017/dbpelatihan');
 
 app.listen(app.get('port'), function() {
   console.log('Node app is running on port', app.get('port'));
