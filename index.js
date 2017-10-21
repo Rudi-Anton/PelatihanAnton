@@ -3,15 +3,15 @@ let mong = require('mongoose');
 let bodyParser = require('body-parser');
 let app = expres();
 
-//token twt
-//global.config = require('./config/config');
-//let jwt    = require('jsonwebtoken');
-//let jwt_secret = "shhh";
+//token jwt
+global.config = require('./config/config');
+let jwt    = require('jsonwebtoken');
+let jwt_secret = "shhh";
 
 app.use(bodyParser.json());
 app.set('port', (process.env.PORT || 8889));
 
-//let verifyToken = require('./middleware/verifyToken');
+let verifyToken = require('./middleware/verifyToken');
 
 app.use(function (req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
@@ -20,10 +20,10 @@ app.use(function (req, res, next) {
   next();
 });
 
-//app.use('/api', require('./controllers/helloWorld.js')(router));
-
+let loginRoute=require('./login/loginRoute.js');
+app.use('/api',loginRoute);
 let penggunaRoute = require('./pengguna/penggunaRoute.js');
-app.use('/api', penggunaRoute);
+app.use('/api',verifyToken, penggunaRoute);
 let provinsiRoute = require('./provinsi/provinsiRoute.js');
 app.use('/api', provinsiRoute);
  let aksesPenggunaRoute=require('./aksesPengguna/aksesPenggunaRoute.js');
