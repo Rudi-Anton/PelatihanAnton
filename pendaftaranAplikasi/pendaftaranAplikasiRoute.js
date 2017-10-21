@@ -38,7 +38,7 @@ route.delete('/pendaftaranaplikasi/:_id', function (req, res) {
  });
  route.get('/pendaftaranaplikasi/:_id', function (req, res) {
      let id = req.params._id;
-     PendaftaranAplikasiController.getPendaftaranAplikasiById(id, function (error, respon) {
+    PendaftaranAplikasiController.getPendaftaranAplikasiById(id, function (error, respon) {
         if (error) {
             throw error;
         }
