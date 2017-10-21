@@ -1,19 +1,19 @@
 let expres = require('express');
 let mong = require('mongoose');
 let bodyParser = require('body-parser');
-let app=expres();
+let app = expres();
 
 //token twt
- //global.config = require('./config/config');
- //let jwt    = require('jsonwebtoken');
- //let jwt_secret = "shhh";
+//global.config = require('./config/config');
+//let jwt    = require('jsonwebtoken');
+//let jwt_secret = "shhh";
 
 app.use(bodyParser.json());
 app.set('port', (process.env.PORT || 8889));
 
 //let verifyToken = require('./middleware/verifyToken');
 
-app.use(function(req, res, next) {
+app.use(function (req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
   res.header("Access-Control-Allow-Methods", "GET, POST, DELETE, OPTIONS,PUT");
@@ -22,10 +22,10 @@ app.use(function(req, res, next) {
 
 //app.use('/api', require('./controllers/helloWorld.js')(router));
 
-// let penggunaRoute=require('./pengguna/penggunaRoute.js');
-// app.use('/api',penggunaRoute);
-let provinsiRoute=require('./provinsi/provinsiRoute.js');
-app.use('/api',provinsiRoute);
+let penggunaRoute = require('./pengguna/penggunaRoute.js');
+app.use('/api', penggunaRoute);
+let provinsiRoute = require('./provinsi/provinsiRoute.js');
+app.use('/api', provinsiRoute);
 // let aksesPenggunaRoute=require('./aksespengguna/aksesPenggunaRoute.js');
 // app.use('/api',aksesPenggunaRoute);
 // let pendaftaranRinciRoute=require('./pendaftaranrinci/pendaftaranRinciRoute.js');
@@ -41,6 +41,6 @@ app.use('/api',provinsiRoute);
 require("./koneksidb/koneksidb")
 //mong.connect('mongodb://localhost:27017/dbpelatihan');
 
-app.listen(app.get('port'), function() {
+app.listen(app.get('port'), function () {
   console.log('Node app is running on port', app.get('port'));
 });

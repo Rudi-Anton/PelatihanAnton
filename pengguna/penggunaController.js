@@ -1,0 +1,16 @@
+Pengguna=require('./penggunaModel.js');
+module.exports.getPengguna=function(callback,limit){
+    Pengguna.find(callback).limit(limit);
+}
+module.exports.createPengguna=function(pengguna,callback){
+    Pengguna.create(pengguna,callback);
+}
+module.exports.removePengguna=function(_id,callback){
+    Pengguna.findByIdAndRemove(_id,callback);
+}
+module.exports.updatePengguna=function(_id,pengguna,callback){
+    Pengguna.findByIdAndUpdate(_id,pengguna,callback);
+}
+module.exports.getPenggunaById=function(id,callback){
+    Pengguna.findById(id,callback);
+}
