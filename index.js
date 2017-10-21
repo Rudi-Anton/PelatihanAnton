@@ -22,17 +22,17 @@ app.use(function(req, res, next) {
 
 //app.use('/api', require('./controllers/helloWorld.js')(router));
 
-let penggunaRoute=require('./pengguna/penggunaRoute.js');
-app.use('/api',penggunaRoute);
+// let penggunaRoute=require('./pengguna/penggunaRoute.js');
+// app.use('/api',penggunaRoute);
 let provinsiRoute=require('./provinsi/provinsiRoute.js');
 //app.use('/api',provinsiRoute);
 app.use('/api',provinsiRoute);
-let aksespenggunaRoute=require('./aksespengguna/AksespenggunaRoute.js');
-app.use('/api',aksespenggunaRoute);
+// let aksespenggunaRoute=require('./aksespengguna/AksespenggunaRoute.js');
+// app.use('/api',aksespenggunaRoute);
 // let pendaftaranRinciRoute=require('./pendaftaranrinci/pendaftaranRinciRoute.js');
 // app.use('/api',pendaftaranRinciRoute);
-let pendaftaranAplikasiRoute=require('./pendaftaranaplikasi/pendaftaranAplikasiRoute.js');
-app.use('/api',pendaftaranAplikasiRoute);
+// let pendaftaranAplikasiRoute=require('./pendaftaranaplikasi/pendaftaranAplikasiRoute.js');
+// app.use('/api',pendaftaranAplikasiRoute);
 // let guruKungfuRoute=require('./guruKungfu/guruKungfuRoute.js');
 // app.use('/api',guruKungfuRoute);
 // let muridKungfuRoute=require('./muridKungfu/muridKungfuRoute.js');
