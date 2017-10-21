@@ -2,14 +2,16 @@ let expres = require('express');
 let mong = require('mongoose');
 let bodyParser = require('body-parser');
 let app=expres();
- global.config = require('./config/config');
 
- let jwt    = require('jsonwebtoken');
- let jwt_secret = "shhh";
+//token twt
+ //global.config = require('./config/config');
+ //let jwt    = require('jsonwebtoken');
+ //let jwt_secret = "shhh";
+
 app.use(bodyParser.json());
 app.set('port', (process.env.PORT || 8889));
 
-let verifyToken = require('./middleware/verifyToken');
+//let verifyToken = require('./middleware/verifyToken');
 
 app.use(function(req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
@@ -24,7 +26,7 @@ let penggunaRoute=require('./pengguna/penggunaRoute.js');
 app.use('/api',penggunaRoute);
 let provinsiRoute=require('./provinsi/provinsiRoute.js');
 //app.use('/api',provinsiRoute);
-app.use('/api',verifyToken,provinsiRoute);
+app.use('/api',provinsiRoute);
 let aksespenggunaRoute=require('./aksespengguna/AksespenggunaRoute.js');
 app.use('/api',aksespenggunaRoute);
 let pendaftaranRinciRoute=require('./pendaftaranrinci/pendaftaranRinciRoute.js');
