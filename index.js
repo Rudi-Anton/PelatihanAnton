@@ -23,7 +23,7 @@ app.use(function (req, res, next) {
 let loginRoute=require('./login/loginRoute.js');
 app.use('/api',loginRoute);
 let penggunaRoute = require('./pengguna/penggunaRoute.js');
-app.use('/api',verifyToken, penggunaRoute);
+app.use('/api', penggunaRoute);
 let provinsiRoute = require('./provinsi/provinsiRoute.js');
 app.use('/api', provinsiRoute);
  let aksesPenggunaRoute=require('./aksesPengguna/aksesPenggunaRoute.js');
